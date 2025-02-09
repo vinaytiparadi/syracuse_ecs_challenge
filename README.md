@@ -4,9 +4,9 @@ This repository contains three main parts of a coding challenge, each structured
 
 ## Repository Structure
 
-- **[Challenge Part 1](Challenge%20Part%201/README.md)**
-- **[Challenge Part 2](Challenge%20Part%202/README.md)**
-- **[Challenge Part 3](Challenge%20Part%203/README.md)**
+- **[Challenge Part 1](Challenge%20Part%201/readme.md)**
+- **[Challenge Part 2](Challenge%20Part%202/readme.md)**
+- **[Challenge Part 3](Challenge%20Part%203/readme.md)**
 
 ## Demo/Tutorial Video ⭐
 
