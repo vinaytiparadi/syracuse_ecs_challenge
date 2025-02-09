@@ -1,7 +1,7 @@
-# Poster Ranking System – Hackathon Part 3
+# Poster Score Ranking – Hackathon Part 3
 
 ## Overview
-This project ranks posters based on judges' scores, ensuring fairness and balancing multiple evaluation criteria. Each poster is judged by two judges, and the algorithm combines their scores to produce an overall ranking. The ranking considers **Innovation (0-4 scale)**, **Clarity (0-3 scale)**, and **Presentation (0-3 scale)**, along with the **Total** score.
+This part ranks posters based on judges' scores, ensuring fairness and balancing multiple evaluation criteria. Each poster is judged by two judges, and the algorithm combines their scores to produce an overall ranking. The ranking considers **Innovation (0-4 scale)**, **Clarity (0-3 scale)**, and **Presentation (0-3 scale)**, along with the **Total** score.
 
 The final output is a ranked list of posters saved in a new Excel file.
 
