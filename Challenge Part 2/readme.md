@@ -41,6 +41,21 @@ poster_judging_app/
 *   **`requirements.txt`**: Lists the required Python packages (Flask and pandas).
 *   **`img1.jpg`**: (Input Data) Background Image for the login.html. **You need to add the path to your own image in the login.html, if you plan to use one**
 
+### Example Input Data for `judge_poster_assignment_matrix.xlsx`
+The file `judge_poster_assignment_matrix.xlsx` contains a matrix representing the judge-poster assignments. The value `1` indicates that the respective judge will evaluate that poster, while `0` indicates that the judge will not evaluate it. Each row represents a poster, and each column represents a judge.
+
+The input data might look like this:
+
+| Poster # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 |
+|----------|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|
+| 1        | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  |
+| 2        | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  |
+| 3        | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  | 0  | 0  | 1  | 0  | 1  | 0  | 0  | 0  |
+| 4        | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  |
+| 5        | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  | 0  | 1  | 1  | 0  | 0  | 0  | 0  | 0  |
+
+---
+
 ## Setup and Execution
 
 1.  **Install Dependencies:**
