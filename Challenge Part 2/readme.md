@@ -123,3 +123,7 @@ The input data might look like this:
 
 *   **Submit Frequently:** It's recommended to click "Submit Scores" for each poster after you've entered the scores. This ensures your work is saved even if you accidentally close your browser or lose your internet connection.
 *   **Shutdown:**  The scores are *permanently* saved only when the administrator shuts down the application using `Ctrl+C or Cmd` in the terminal where `driver.py` is running.
+
+## Important Note
+**⚠️ The scores are permanently saved only when the administrator shuts down the application using `Ctrl+C` or `Cmd` in the terminal where `driver.py` is running.**
+
