@@ -36,6 +36,7 @@ The final output is a ranked list of posters saved in a new Excel file.
    Since each poster is judged by two judges, there are two rows for each poster with the corresponding scores from each judge.
 
 ### Example Input File:
+The input data is file `output_for_part3.xlsx` (this is the file you get as output from part2) might look like this:
 | Poster # | Judge # | Innovation | Clarity | Presentation | Total |
 |----------|---------|------------|---------|--------------|-------|
 | 1        | 101     | 4.0        | 3.0     | 3.0          | 10.0  |
