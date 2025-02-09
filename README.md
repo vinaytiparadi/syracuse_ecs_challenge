@@ -10,7 +10,8 @@ This repository contains three main parts of a coding challenge, each structured
 
 ## Demo/Tutorial Video ⭐
 
-Watch the full project demo/tutorial on YouTube: [https://youtu.be/xsW-RDDcL5w](#)  
+Watch the full project demo/tutorial on YouTube: [Here](https://youtu.be/xsW-RDDcL5w)
+
 
 ## Getting Started
 
