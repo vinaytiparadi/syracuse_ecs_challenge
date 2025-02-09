@@ -35,11 +35,25 @@ The assignment of judges to posters is performed in multiple stages:
 - Judges' research interests, areas of expertise, and past publications are extracted and used for matching.
 - NLP techniques such as TF-IDF (Term Frequency-Inverse Document Frequency) and sentence embeddings are applied to compute similarity scores.
 - The scoring system consists of:
-  - **Semantic Similarity (35%)**: Uses a sentence transformer model to compare abstracts with judges' research descriptions.
-  - **Keyword Overlap (25%)**: Computes shared keywords between a poster abstract and a judge's research field.
-  - **Field Relevance (0%)**: Initially considered, but not weighted in the final implementation.
-  - **Expertise Level (40%)**: Determines a judge's proficiency based on experience indicators like 'expert', 'research', 'PhD', and 'professor'.
+  - **BERT-based Sentence Embeddings**:
+    - Uses the all-mpnet-base-v2 model from sentence-transformers to encode poster abstracts and judges' research descriptions.
+    - Computes cosine similarity between embeddings to determine how closely related a judge’s expertise is to a given poster.
+    - Semantic similarity score contributes 35% to the final score.
+   
+  - **TF-IDF Keyword Overlap**:
+    - Extracts important keywords from both poster abstracts and judges' research areas.
+    - Computes similarity based on common keyword presence.
+    - Keyword similarity score contributes 25% to the final score.
+   
+  - **Field Relevance (Department-based Matching)**:
+    - Uses predefined field relationships (e.g., Computer Science → AI, Algorithms, Software Engineering) to determine topic overlap.
+    - Currently set to 0% weight but can be adjusted.
+
+  - **Expertise Level Score (Lexical Matching)**:
+    - Checks for domain-specific words like "expert", "professor", "PhD", "research", etc., in judge descriptions.
+    - Expertise score contributes 40% to the final score.
 - Judges receive an overall expertise score based on these weighted components, which helps in optimal assignment.
+
 
 ### 3. **Applying Constraints for Assignment** (`matcher.py`)
 - Each poster is assigned exactly two judges.
