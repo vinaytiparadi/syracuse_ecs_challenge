@@ -22,6 +22,17 @@ This project automates the process of assigning judges to research posters for t
   - `Example_list_judges.xlsx`: Contains judge names, departments, and availability.
   - `professors.xlsx`: (Optional) If missing, the scraper will generate this file with faculty research interests.
 
+### Example Input Data
+The input data in `Sample_input_abstracts.xlsx` might look like this:
+
+| Poster # | Title   | Abstract   | Advisor FirstName | Advisor LastName | Program                      |
+|----------|---------|------------|------------------|-----------------|-----------------------------|
+| 1        | Title 1 | Abstract 1 | Advisor 1 FirstName | Advisor 1 LastName | Computer/Information Science |
+| 2        | Title 2 | Abstract 2 | Advisor 2 FirstName | Advisor 2 LastName | Electrical/Computer Engineering |
+| 3        | Title 3 | Abstract 3 | Advisor 3 FirstName | Advisor 3 LastName | Civil Engineering           |
+| 4        | Title 4 | Abstract 4 | Advisor 4 FirstName | Advisor 4 LastName | Electrical/Computer Engineering |
+| 5        | Title 5 | Abstract 5 | Advisor 5 FirstName | Advisor 5 LastName | Bioengineering              |
+
 ## Approach for Assigning Judges to Posters
 The assignment of judges to posters is performed in multiple stages:
 
