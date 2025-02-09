@@ -1,7 +1,7 @@
-# Poster Ranking System – Hackathon Part 3
+# Poster Score Ranking – Hackathon Part 3
 
 ## Overview
-This project ranks posters based on judges' scores, ensuring fairness and balancing multiple evaluation criteria. Each poster is judged by two judges, and the algorithm combines their scores to produce an overall ranking. The ranking considers **Innovation (0-4 scale)**, **Clarity (0-3 scale)**, and **Presentation (0-3 scale)**, along with the **Total** score.
+This part ranks posters based on judges' scores, ensuring fairness and balancing multiple evaluation criteria. Each poster is judged by two judges, and the algorithm combines their scores to produce an overall ranking. The ranking considers **Innovation (0-4 scale)**, **Clarity (0-3 scale)**, and **Presentation (0-3 scale)**, along with the **Total** score.
 
 The final output is a ranked list of posters saved in a new Excel file.
 
@@ -36,6 +36,7 @@ The final output is a ranked list of posters saved in a new Excel file.
    Since each poster is judged by two judges, there are two rows for each poster with the corresponding scores from each judge.
 
 ### Example Input File:
+The input data is file `output_for_part3.xlsx` (this is the file you get as output from part2) might look like this:
 | Poster # | Judge # | Innovation | Clarity | Presentation | Total |
 |----------|---------|------------|---------|--------------|-------|
 | 1        | 101     | 4.0        | 3.0     | 3.0          | 10.0  |
@@ -82,3 +83,8 @@ The final output is a ranked list of posters saved in a new Excel file.
 ### Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
+
+### Execution Steps
+```bash
+python rank_poster_score.py

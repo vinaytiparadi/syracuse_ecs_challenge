@@ -1,44 +1,56 @@
-<!DOCTYPE html>
+ <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Judge Login - EECS, Syracuse University</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Font */
+        :root {
+            --syracuse-dark-blue: #000e54;
+            --syracuse-orange: #F76900;
+            --syracuse-white: #FFFFFF;
+        }
+
+        @font-face {
+            font-family: 'ShermanSans';
+            src: url('https://ecs.syracuse.edu/wp-content/themes/syracuse/fonts/ShermanSans.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
 
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            color: white;
+            min-height: 100vh;
+            color: var(--syracuse-white);
             overflow: hidden;
+            background: linear-gradient(135deg, var(--syracuse-dark-blue), #001e6e);
+            font-family: 'Open Sans', sans-serif;
         }
 
-        /* Background Image */
         .bg-image {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('img1.jpg'); /* Path to your image */
+            background-image: url('img1.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            opacity: 0.15;
             z-index: -1;
         }
 
-        /* Container for Header and Login Box */
         .main-container {
             display: flex;
             flex-direction: column;
@@ -46,38 +58,32 @@
             align-items: center;
             text-align: center;
             width: 100%;
+            max-width: 420px;
+            padding: 20px;
         }
 
-        /* Header Styling */
         .header {
-            margin-bottom: 40px;
-            font-size: 2rem;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: #ff6a00;
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
-            max-width: 700px;
+            color: var(--syracuse-orange);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
             opacity: 0;
             animation: fadeInHeader 1s forwards;
             animation-delay: 0.5s;
+            font-family: 'ShermanSans', 'Open Sans', sans-serif;
+            letter-spacing: -0.02em;
         }
 
-        /* Fade-in Animation for Header */
         @keyframes fadeInHeader {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Login Container */
         .login-container {
-            width: 420px;
-            padding: 50px;
-            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            padding: 40px;
+            background: rgba(0, 14, 84, 0.8);
             border-radius: 16px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
@@ -85,26 +91,21 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             opacity: 0;
             animation: fadeInLogin 1s forwards;
-            animation-delay: 1.5s;
+            animation-delay: 1s;
         }
 
-        /* Fade-in Animation for Login Box */
         @keyframes fadeInLogin {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         h2 {
             font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: #ff6a00;
+            margin-bottom: 30px;
+            color: var(--syracuse-orange);
+            font-family: 'ShermanSans', 'Open Sans', sans-serif;
+            letter-spacing: -0.02em;
         }
 
         .input-group {
@@ -116,63 +117,73 @@
             width: 100%;
             padding: 16px;
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
-            color: white;
-            font-size: 1.1rem;
+            color: var(--syracuse-white);
+            font-size: 1rem;
             outline: none;
             transition: 0.3s;
+            font-family: 'Open Sans', sans-serif;
         }
 
         input::placeholder {
             color: rgba(255, 255, 255, 0.6);
+            font-family: 'Open Sans', sans-serif;
         }
 
         input:focus {
-            border-color: #ff5722;
-            box-shadow: 0 0 10px rgba(255, 87, 34, 0.6);
+            border-color: var(--syracuse-orange);
+            box-shadow: 0 0 10px rgba(247, 105, 0, 0.6);
         }
 
         .btn-login {
             width: 100%;
             padding: 16px;
-            background: #ff5722;
-            color: white;
+            background: var(--syracuse-orange);
+            color: var(--syracuse-white);
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+            box-shadow: 0 4px 12px rgba(247, 105, 0, 0.3);
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-login:hover {
-            background: #e64a19;
+            background: #E55D00;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 87, 34, 0.5);
+            box-shadow: 0 8px 20px rgba(247, 105, 0, 0.5);
         }
 
         .error-message {
-            color: #ffccbc;
+            color: #FFB4A2;
             margin-top: 12px;
             font-size: 0.9rem;
+            font-family: 'Open Sans', sans-serif;
         }
 
         @media (max-width: 480px) {
+            .main-container {
+                padding: 10px;
+            }
             .login-container {
-                width: 90%;
                 padding: 30px;
+            }
+            .header {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background Image -->
     <div class="bg-image"></div>
 
     <div class="main-container">
-        <!-- Login Container -->
+        <h1 class="header">EECS Judge Portal</h1>
         <div class="login-container">
             <h2>Judge Login</h2>
             <form action="/login" method="post">
@@ -191,3 +202,211 @@
     </div>
 </body>
 </html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judge Login - EECS, Syracuse University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --syracuse-dark-blue: #000e54;
+            --syracuse-orange: #F76900;
+            --syracuse-white: #FFFFFF;
+        }
+
+        @font-face {
+            font-family: 'ShermanSans';
+            src: url('https://ecs.syracuse.edu/wp-content/themes/syracuse/fonts/ShermanSans.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--syracuse-white);
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--syracuse-dark-blue), #001e6e);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('{{ url_for("static", filename="img/img1.jpg") }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.35; /* Increased opacity for more image visibility */
+    z-index: -1;
+}
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+        }
+
+        .header {
+    margin-bottom: 30px;
+    font-size: 3rem; /* Increased font size */
+    font-weight: 900; /* Extra bold */
+    color: var(--syracuse-orange);
+    text-shadow: 0px 0px 15px rgba(247, 105, 0, 0.8), 1px 1px 3px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    animation: fadeInHeader 1s forwards;
+    animation-delay: 0.5s;
+    font-family: 'ShermanSans', 'Open Sans', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+
+        @keyframes fadeInHeader {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-container {
+            width: 100%;
+            padding: 40px;
+            background: rgba(0, 14, 84, 0.8);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            animation: fadeInLogin 1s forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInLogin {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--syracuse-orange);
+            font-family: 'ShermanSans', 'Open Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: var(--syracuse-white);
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        input:focus {
+            border-color: var(--syracuse-orange);
+            box-shadow: 0 0 10px rgba(247, 105, 0, 0.6);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background: var(--syracuse-orange);
+            color: var(--syracuse-white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 12px rgba(247, 105, 0, 0.3);
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-login:hover {
+            background: #E55D00;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(247, 105, 0, 0.5);
+        }
+
+        .error-message {
+            color: #FFB4A2;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 10px;
+            }
+            .login-container {
+                padding: 30px;
+            }
+            .header {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+
+    <div class="main-container">
+        <h1 class="header">ECS Judge Portal</h1>
+        <div class="login-container">
+            <h2>Judge Login</h2>
+            <form action="/login" method="post">
+                <div class="input-group">
+                    <input type="number" id="judge_id" name="judge_id" placeholder="Judge ID" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+

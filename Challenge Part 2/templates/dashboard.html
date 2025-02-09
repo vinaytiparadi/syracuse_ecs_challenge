@@ -1,152 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judge Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1c1c1c, #222831);
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .dashboard-container {
-            width: 80%;  /* Reduced width to make it smaller */
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 20px; /* Reduced padding for a tighter layout */
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #ff5722;
-        }
-
-        .poster-entry {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            margin: 10px 0 5px;
-            color: white;
-        }
-
-        .score-input {
-            width: 60px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 6px;
-            font-size: 16px;
-            text-align: center;
-            color: white;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .score-input:focus {
-            border-color: #ff5722;
-            box-shadow: 0 0 10px rgba(255, 87, 34, 0.6);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background: #ff5722;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            background: #e64a19;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 87, 34, 0.5);
-        }
-
-        .logout {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .logout:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        @media (max-width: 480px) {
-            .dashboard-container {
-                width: 100%;
-                padding: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="dashboard-container">
-        <h1>Welcome, Judge {{ judge_id }}!</h1>
-        <p>Here are the posters you are assigned to judge:</p>
-        <form method="post" action="/dashboard">
-            {% for poster in poster_data %}
-                <div class="poster-entry">
-                    <h3>Poster #{{ poster.number }}</h3>
-                    <label for="innovation_{{ poster.number }}">Innovation:</label>
-                    <input type="number" class="score-input" id="innovation_{{ poster.number }}" name="innovation_{{ poster.number }}" value="{{ poster.innovation }}" min="0" max="10" required>
-                    <label for="clarity_{{ poster.number }}">Clarity:</label>
-                    <input type="number" class="score-input" id="clarity_{{ poster.number }}" name="clarity_{{ poster.number }}" value="{{ poster.clarity }}" min="0" max="10" required>
-                    <label for="presentation_{{ poster.number }}">Presentation:</label>
-                    <input type="number" class="score-input" id="presentation_{{ poster.number }}" name="presentation_{{ poster.number }}" value="{{ poster.presentation }}" min="0" max="10" required>
-                    <br><br>
-                    <strong style="color: #ffccbc;">Total: {{ poster.total }}</strong>
-                    <br><br>
-                    <button type="submit" class="submit-btn">Submit Scores</button>
-                </div>
-            {% endfor %}
-        </form>
-        <a href="/logout" class="logout">Logout</a>
-    </div>
-</body>
-</html> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -158,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff6b35;
-            --background-color: #1a1a2e;
-            --card-background: rgba(255, 255, 255, 0.05);
+            --primary-color: #F76900;
+            --background-color: #000e54;
+            --card-background: rgba(0, 14, 84, 0.8);
             --text-color: #ffffff;
             --input-background: rgba(255, 255, 255, 0.1);
             --border-color: rgba(255, 255, 255, 0.2);
@@ -316,7 +167,7 @@
 <body>
     <div class="dashboard-container">
         <h1>Welcome, Judge {{ judge_id }}!</h1>
-        <form id="judgeForm" method="post" action="/dashboard">
+        <!-- <form id="judgeForm" method="post" action="/dashboard">
             {% for poster in poster_data %}
                 <div class="poster-entry">
                     <div class="poster-header">
@@ -372,6 +223,64 @@
                 alert('Scores submitted successfully!');
             });
         });
+    </script> -->
+
+    <form id="judgeForm" method="post" action="/dashboard">
+        {% for poster in poster_data %}
+            <div class="poster-entry">
+                <div class="poster-header">
+                    <h3 class="poster-number">Poster #{{ poster.number }}</h3>
+                </div>
+                <div class="scores-grid">
+                    <div>
+                        <label for="innovation_{{ poster.number }}">Innovation (Max 4):</label>
+                        <input type="number" class="score-input" id="innovation_{{ poster.number }}" name="innovation_{{ poster.number }}" value="{{ poster.innovation }}" min="0" max="4" required>
+                    </div>
+                    <div>
+                        <label for="clarity_{{ poster.number }}">Clarity (Max 3):</label>
+                        <input type="number" class="score-input" id="clarity_{{ poster.number }}" name="clarity_{{ poster.number }}" value="{{ poster.clarity }}" min="0" max="3" required>
+                    </div>
+                    <div>
+                        <label for="presentation_{{ poster.number }}">Presentation (Max 3):</label>
+                        <input type="number" class="score-input" id="presentation_{{ poster.number }}" name="presentation_{{ poster.number }}" value="{{ poster.presentation }}" min="0" max="3" required>
+                    </div>
+                </div>
+                <div class="total-score">Total: <span id="total_{{ poster.number }}">{{ poster.total }}</span></div>
+                <button type="submit" class="submit-btn">Submit Scores</button>
+            </div>
+        {% endfor %}
+    </form>
+    <a href="/logout" class="logout">Logout</a>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('judgeForm');
+    
+            form.addEventListener('submit', function(e) {
+                const inputs = document.querySelectorAll('.score-input');
+                let valid = true;
+    
+                inputs.forEach(input => {
+                    const maxValue = parseInt(input.getAttribute('max'));
+                    const value = parseInt(input.value) || 0;
+    
+                    if (value > maxValue) {
+                        alert(`The score for ${input.previousElementSibling.textContent.trim()} cannot exceed ${maxValue}.`);
+                        input.focus();
+                        valid = false;
+                    }
+                });
+    
+                if (!valid) {
+                    e.preventDefault();
+                } else {
+                    alert('Scores submitted successfully!');
+                }
+            });
+        });
     </script>
+    
+
+
 </body>
 </html>
