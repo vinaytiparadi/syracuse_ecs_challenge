@@ -86,7 +86,7 @@ The input data might look like this:
     Open a web browser and go to `http://127.0.0.1:6969/`.  You should see the login page.
 
     
-    <img src="https://raw.githubusercontent.com/vinaytiparadi/syracuse_ecs_challenge/refs/heads/main/Challenge%20Part%202/qr-code.png?token=GHSAT0AAAAAAC4PVD3LCSUIWUHPE2PGGV6OZ5I2AZQ" alt="Alt Text" width="250" height="250">
+    <img src="https://raw.githubusercontent.com/Narayannn/QR-Code-Challenge2/refs/heads/main/qr-code.png" alt="Alt Text" width="250" height="250">
 
 ## Approach on How to Use the Web Application (For Judges)
 
