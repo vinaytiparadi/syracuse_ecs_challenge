@@ -82,6 +82,7 @@ The final output is a ranked list of posters saved in a new Excel file.
 ### Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
 
 ### Execution Steps
 ```bash
