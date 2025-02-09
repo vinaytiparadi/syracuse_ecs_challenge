@@ -115,6 +115,23 @@ python driver.py
 - `processed_Example_list_judges.xlsx`: Judge assignments.
 - `judge_poster_assignment_matrix.xlsx`: Binary matrix representation of assignments.
 
+### Example Output data generated for `judge_poster_assignment_matrix.xlsx`
+The file `judge_poster_assignment_matrix.xlsx` contains a matrix representing the judge-poster assignments. The value `1` indicates that the respective judge will evaluate that poster, while `0` indicates that the judge will not evaluate it. Each row represents a poster, and each column represents a judge.
+
+The output matrix might look like this:
+
+| Poster # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 |
+|----------|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|
+| 1        | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  |
+| 2        | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  |
+| 3        | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  | 0  | 0  | 1  | 0  | 1  | 0  | 0  | 0  |
+| 4        | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  |
+| 5        | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  | 0  | 1  | 1  | 0  | 0  | 0  | 0  | 0  |
+
+---
+This judge_poster_assignment_matrix.xlsx would be used as an input file for Challenge 2 
+
+
 ## Assumptions
 - Judges are ECS faculty members.
 - At least `J > P/3` for feasible assignments.
