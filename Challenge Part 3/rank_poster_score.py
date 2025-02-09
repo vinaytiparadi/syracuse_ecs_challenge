@@ -5,7 +5,7 @@ def rank_posters(input_file, output_file):
     df = pd.read_excel(input_file)
     
     # First calculate total score for each poster (sum of both judges)
-    poster_stats = df.groupby('Poster #').agg({
+    poster_stats = df.groupby('Poster Number').agg({
         'Total': 'sum',
         'Innovation': 'mean',
         'Clarity': 'mean',
@@ -37,24 +37,24 @@ def rank_posters(input_file, output_file):
     sorted_posters['Rank'] = ranks
     
     # Create a dictionary to map poster numbers to ranks
-    rank_mapping = dict(zip(sorted_posters['Poster #'], sorted_posters['Rank']))
+    rank_mapping = dict(zip(sorted_posters['Poster Number'], sorted_posters['Rank']))
     
     # Add rank column to original DataFrame
-    df['Rank'] = df['Poster #'].map(rank_mapping)
+    df['Rank'] = df['Poster Number'].map(rank_mapping)
     
     # Save to new Excel file
     df.to_excel(output_file, index=False)
     
     # Print rankings for verification
     print("\nRanking Summary:")
-    summary = sorted_posters.sort_values('Rank')[['Poster #', 'Total', 'Innovation', 'Clarity', 'Presentation', 'Rank']]
+    summary = sorted_posters.sort_values('Rank')[['Poster Number', 'Total', 'Innovation', 'Clarity', 'Presentation', 'Rank']]
     print(summary.to_string(index=False))
     
     return df
 
 # Example usage:
-input_file = "poster_scores_test_data.xlsx"  # Replace with your input file path
-output_file = "poster_scores_test_data_ranked_v1.xlsx"  # Replace with desired output file path
+input_file = "output_for_part3.xlsx"  # Replace with your input file path
+output_file = "poster_rankings.xlsx"  # Replace with desired output file path
 
 # Run the ranking
 result = rank_posters(input_file, output_file)
