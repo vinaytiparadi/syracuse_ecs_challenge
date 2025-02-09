@@ -89,7 +89,7 @@ poster_judging_app/
         *   A "Submit Scores" button.
 
 4.  **Scoring Posters:**
-    *   For each poster, enter a score from 0 to 10 (inclusive) for each of the three categories: Innovation, Clarity, and Presentation.
+    *   For each poster, enter a score out of 10 for each of the three categories: Innovation would be scored out of 4 , Clarity would be scoredout of 3, and Presentation would be scored out of 3.
     *   As you enter scores, the "Total" will update dynamically.
     *   Once you have entered scores for a poster, click the "Submit Scores" button *for that poster*.  This saves your scores for that specific poster.  You can submit scores for each poster individually.
 
