@@ -70,6 +70,9 @@ poster_judging_app/
 
     Open a web browser and go to `http://127.0.0.1:6969/`.  You should see the login page.
 
+    
+    <img src="https://raw.githubusercontent.com/vinaytiparadi/syracuse_ecs_challenge/refs/heads/main/Challenge%20Part%202/qr-code.png?token=GHSAT0AAAAAAC4PVD3LCSUIWUHPE2PGGV6OZ5I2AZQ" alt="Alt Text" width="250" height="250">
+
 ## Approach on How to Use the Web Application (For Judges)
 
 1.  **Obtain Credentials:** You will be provided with a Judge ID.  The `driver.py` script automatically generates a `judge_passwords.csv` file containing the Judge ID and a randomly generated password.  The administrator of the system should securely share your Judge ID and password with you.  *Do not share these credentials.*
